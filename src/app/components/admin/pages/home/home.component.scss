@@ -1,0 +1,31 @@
+@import "../../../../scss/index.scss";
+
+// Formatação
+div {
+  p {
+    color: $secondary-bg-color;
+    font-size: rem-calc(25);
+    font-weight: 700;
+  }
+
+  button {
+    background: $secondary-bg-color;
+    border: none;
+    border-radius: rem-calc(10);
+
+    color: $secondaty-text-color;
+    font-size: rem-calc(18);
+
+    width: 100%;
+    height: rem-calc(60);
+    margin: rem-calc(25) 0;
+
+    cursor: pointer;
+
+    &:disabled {
+      background: darken($secondary-bg-color, 20%);
+
+      cursor: not-allowed;
+    }
+  }
+}
