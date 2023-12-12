@@ -1,15 +1,17 @@
 <div class="container">
   <img src="../../../../../assets/imgs/angular.png" alt="" />
-  <form>
+  <form [formGroup]="formLogin" (ngSubmit)="submitLogin()">
     <div>
       <img src="../../../../../assets/icons/email.svg" />
-      <input type="email" placeholder="Email" />
+      <input type="email" placeholder="Email" formControlName="email" />
     </div>
     <div>
       <img src="../../../../../assets/icons/password.svg" />
-      <input type="password" placeholder="Senha" />
+      <input type="password" placeholder="Senha" formControlName="password" />
     </div>
-    <input type="submit" value="Entrar" />
+    <input type="submit" value="Entrar" [disabled]="formLogin.invalid" />
   </form>
-  <p>Usuário ou senha Incorreta</p>
+  @if (msgError) {
+  <p>{{ msgError }}</p>
+  }
 </div>
